@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../Service/api.service'
 
 @Component({
   selector: 'warrantyreport',
@@ -7,12 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WarrantyreportComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.apiService.getWarrantyReports().subscribe((res)=>{      
+        console.log("Response:" + res);
+    })
   }
-
-  heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
-
-
 }

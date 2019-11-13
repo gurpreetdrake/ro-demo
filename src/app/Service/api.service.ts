@@ -4,8 +4,14 @@ import {Warrantyreports} from '../Model/warrantyreports'
 @Injectable({
   providedIn: 'root'
 })
-export class ApiServiceService {
-  apiURL: string = 'https://shielded-sands-78532.herokuapp.com/warranties'
+export class ApiService {
+  apiURL: string = 'https://shielded-sands-78532.herokuapp.com'
   constructor(private httpClient: HttpClient) { }
-  public getWarrantyReports(url?: string){}
+
+  public getWarrantyReports(){
+    return this.httpClient.get<Warrantyreports[]>(`${this.apiURL}/warranties`);
+  }
+  public deleteWarrantyReports(id: number){
+    return this.httpClient.delete(`${this.apiURL}/warranties/${id}`);
+}
 }

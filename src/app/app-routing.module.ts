@@ -5,8 +5,8 @@ import { WarrantyreportComponent } from './warrantyreport/warrantyreport.compone
 
 
 const routes: Routes = [{path:'home', component: HomeComponent},
-  {path:'warrantyreports', component: WarrantyreportComponent},
-{path:'', redirectTo: '/home', pathMatch:'full'}];
+                        {path:'warrantyreports', component: WarrantyreportComponent},
+                        {path:'', redirectTo: '/home', pathMatch:'full'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
