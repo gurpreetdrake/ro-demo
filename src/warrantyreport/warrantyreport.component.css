@@ -1,0 +1,12 @@
+button{
+    border-radius: 70px;
+    height: 60px;
+    /* background: #1776D2; */
+    background-color: #1776D2;
+    color: #fff;
+    font-size: xx-large;
+    position:absolute;
+    bottom:0;
+    right:0;
+    margin: 20px;
+}
