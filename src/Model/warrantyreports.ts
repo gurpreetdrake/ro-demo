@@ -1,4 +1,4 @@
-export class Warrantyreports {
+export class WarrantyreportsModel {
     id: string
     serialNo:number;
     deliveryDate: string;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Warrantyreports} from '../Model/warrantyreports'
+import {WarrantyreportsModel} from '../Model/warrantyreports'
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +9,7 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   public getWarrantyReports(){
-    return this.httpClient.get<Warrantyreports[]>(`${this.apiURL}/warranties`);
+    return this.httpClient.get(`${this.apiURL}/warranties`);
   }
   public deleteWarrantyReports(id: number){
     return this.httpClient.delete(`${this.apiURL}/warranties/${id}`);

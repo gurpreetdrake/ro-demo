@@ -1,12 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {ApiService} from './Service/api.service'
-import { WarrantyreportComponent } from './warrantyreport/warrantyreport.component';
-import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ApiService } from '../Service/api.service'
+import { WarrantyreportComponent } from '../warrantyreport/warrantyreport.component';
+import { HomeComponent } from '../home/home.component';
 
 
 @NgModule({
@@ -17,6 +21,10 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatTableModule,
     HttpClientModule,
     AppRoutingModule
   ],
