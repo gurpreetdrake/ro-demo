@@ -9,9 +9,18 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   public getWarrantyReports(){
-    return this.httpClient.get(`${this.apiURL}/warranties`);
+    return this.httpClient.get<WarrantyreportsModel[]>(`${this.apiURL}/warranties`);
   }
+  
+  public addWarranty(warranty: WarrantyreportsModel){
+    this.httpClient.post(`${this.apiURL}/warranties`, warranty);
+  }
+
+  public updateWarranty(warranty: WarrantyreportsModel){
+    return this.httpClient.put(`${this.apiURL}/warranties/${warranty.id}`, warranty);
+  }
+
   public deleteWarrantyReports(id: number){
     return this.httpClient.delete(`${this.apiURL}/warranties/${id}`);
-}
+  }
 }
