@@ -16,7 +16,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApiService } from '../Service/api.service'
 import { WarrantyreportComponent } from '../warrantyreport/warrantyreport.component';
 import { HomeComponent } from '../home/home.component';
-import { AddWarrantyComponent } from './add-warranty/add-warranty.component';
+import { AddWarrantyComponent } from '../add-warranty/add-warranty.component';
+import { VideosComponent } from '../videos/videos.component';
+import { ImagesComponent } from '../images/images.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { AddWarrantyComponent } from './add-warranty/add-warranty.component';
     AppComponent,
     WarrantyreportComponent,
     HomeComponent,
-    AddWarrantyComponent
+    AddWarrantyComponent,
+    VideosComponent,
+    ImagesComponent
   ],
   imports: [
     BrowserModule,
