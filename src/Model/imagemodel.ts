@@ -1,3 +1,3 @@
-export interface Imagemodel {
+export interface ImageModel {
     src: string;
 }

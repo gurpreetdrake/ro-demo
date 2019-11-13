@@ -1,15 +1,47 @@
 <h3>Add Warranty</h3>
 <div class="example-container">
         <mat-form-field>
-          <input matInput placeholder="Serial No." [(value)]="newRecord.serialNo">
+          <input matInput placeholder="Serial No." [(ngModel)]="newRecord.serialNo">
         </mat-form-field>
       
         <mat-form-field>
-          <input matInput type="date" placeholder="Delivery Date" [(value)]="newRecord.deliveryDate">
+          <input matInput type="date" placeholder="Delivery Date" [ngModel]="newRecord.deliveryDate | date:'yyyy-MM-dd'" (ngModelChange)="newRecord.deliveryDate = $event">
         </mat-form-field>
         
         <mat-form-field>
-            <input matInput placeholder="Customer name" [(value)]="newRecord.customer">
+            <input matInput placeholder="Customer" [(ngModel)]="newRecord.customer">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="NSN" [(ngModel)]="newRecord.nsn">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Designation" [(ngModel)]="newRecord.designation">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Part No." [(ngModel)]="newRecord.partNo">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="$ Value" [(ngModel)]="newRecord.value">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Warranty Period" [(ngModel)]="newRecord.warrantyPeriod">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Warranty Till" [ngModel]="newRecord.warrantyTill | date:'yyyy-MM-dd'" (ngModelChange)="newRecord.warrantyTill = $event">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Type" [(ngModel)]="newRecord.type">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Location" [(ngModel)]="newRecord.location">
         </mat-form-field>
 </div>
 

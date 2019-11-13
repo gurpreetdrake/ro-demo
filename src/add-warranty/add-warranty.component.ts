@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Location } from '@angular/common';
 import { ApiService } from '../Service/api.service';
 import { WarrantyreportsModel } from '../Model/warrantyreports';
 
@@ -12,21 +14,28 @@ export class AddWarrantyComponent implements OnInit {
 
   newRecord: WarrantyreportsModel;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService,
+              private location: Location) { }
 
   ngOnInit() {
     this.newRecord = new WarrantyreportsModel;
-    this.newRecord.serialNo = 0;
-    this.newRecord.deliveryDate = Date.now.toString();
-    this.newRecord.customer = "";
-  }
+    this.newRecord.serialNo = 1234;
+    this.newRecord.deliveryDate = new Date().toISOString().substring(0, 10);
+    this.newRecord.customer = "Customer";
+    this.newRecord.nsn = "7734-07-467-0456";
+    this.newRecord.designation = "TEST SET UPGRADE";
+    this.newRecord.partNo = 16332395;
+    this.newRecord.value = 348;
+    this.newRecord.warrantyPeriod = 5;
+    this.newRecord.warrantyTill = "2020-05-15 00:00:00";
+    this.newRecord.type = "KIT";
+    this.newRecord.location = "Production";
+  } 
 
   saveRecord(){
-    console.log("serialNo: " + this.newRecord.serialNo);  
-    console.log("deliveryDate: " + this.newRecord.deliveryDate);  
-    console.log("customer: " + this.newRecord.customer);  
     this.apiService.addWarranty(this.newRecord).subscribe((res)=>{  
       console.log("Add Response:" + res.toString());
+      this.location.back();
   })
   }
 

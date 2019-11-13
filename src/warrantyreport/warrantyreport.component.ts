@@ -11,7 +11,7 @@ import { WarrantyreportsModel } from '../Model/warrantyreports';
 
 export class WarrantyreportComponent implements OnInit {
 
-  displayedColumns: string[] = ['serialNo', 'deliveryDate', 'customer', 'action'];
+  displayedColumns: string[] = ['serialNo', 'deliveryDate', 'customer', "nsn", 'value', 'warrantyTill', 'partNo','location','designation','type','warrantyPeriod', 'action1', 'action2'];
   warrantyData: any;
 
   constructor(private apiService: ApiService) { }
@@ -24,7 +24,7 @@ export class WarrantyreportComponent implements OnInit {
     this.apiService.getWarrantyReports().subscribe((res)=>{      
       console.log("Get Response:" + res.toString());
       this.warrantyData = res;
-  })
+    })
   }
 
   deleteRecord(id: number){

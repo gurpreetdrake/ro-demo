@@ -18,12 +18,27 @@ export class ImagesComponent implements OnInit {
   ngOnInit() {
   }
   
-  imgs: img[] = [
-    {src: '../assets/img/header40.jpg'},
-    {src: 'C:\git\ro-demo\src\assets\img\header40.jpg'},
-    {src: 'C:\git\ro-demo\src\assets\img\header40.jpg'},
-    {src: 'C:\git\ro-demo\src\assets\img\header40.jpg'},
-    {src: 'C:\git\ro-demo\src\assets\img\header40.jpg'},
-    {src: 'C:\git\ro-demo\src\assets\img\header40.jpg'}
-  ];
+  // imgs: img[] = [
+  //   {src: '../assets/img/header40.jpg'},
+  //   {src: '../assets/img/header40.jpg'},
+  //   {src: '../assets/img/header40.jpg'},
+  //   {src: '../assets/img/header40.jpg'},
+  //   {src: '../assets/img/header40.jpg'},
+  //   {src: '../assets/img/header40.jpg'}
+  // ];
+  ImgData: any;
+  fetchRecords(){
+    this.apiService.getImgData().subscribe((res)=>{
+      console.log("Get Response:"+ res.toString());
+      this.ImgData =res;
+    })
+  }
+
+  deleteRecord(id:number){
+    this.apiService.deleteImgData(id).subscribe((res)=>{
+      console.log("Delete Response:" + res.toString());
+      this.fetchRecords();
+    })
+  }
+  
 }

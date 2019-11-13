@@ -1,6 +1,6 @@
 <div style="padding-left: 20px; padding-right: 20px;">
 <h3>Warranty Report</h3>
-<!-- <button mat-raised-button color="primary" routerLink="/add-warranty">Add</button> -->
+<button mat-raised-button color="primary" routerLink="/add-warranty">Add</button>
 
 <table mat-table [dataSource]="warrantyData" class="mat-elevation-z8" style="width: 100%;">
 
@@ -25,9 +25,65 @@
     <td mat-cell *matCellDef="let element"> {{element.customer}} </td>
   </ng-container>
 
+  <!-- Customer Column -->
+  <ng-container matColumnDef="nsn">
+    <th mat-header-cell *matHeaderCellDef> NSN </th>
+    <td mat-cell *matCellDef="let element"> {{element.nsn}} </td>
+  </ng-container>
+
+  <!-- Customer Column -->
+  <ng-container matColumnDef="designation">
+    <th mat-header-cell *matHeaderCellDef> Designation </th>
+    <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+  </ng-container>
+
+  <!-- Customer Column -->
+  <ng-container matColumnDef="partNo">
+    <th mat-header-cell *matHeaderCellDef> Part No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.partNo}} </td>
+  </ng-container>
+
+  <!-- Customer Column -->
+  <ng-container matColumnDef="value">
+    <th mat-header-cell *matHeaderCellDef> Value </th>
+    <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+  </ng-container>
+
+  <!-- Customer Column -->
+  <ng-container matColumnDef="warrantyPeriod">
+    <th mat-header-cell *matHeaderCellDef> Warranty Period </th>
+    <td mat-cell *matCellDef="let element"> {{element.warrantyPeriod}} </td>
+  </ng-container>
+
+  <!-- Customer Column -->
+  <ng-container matColumnDef="warrantyTill">
+    <th mat-header-cell *matHeaderCellDef> Warranty Till </th>
+    <td mat-cell *matCellDef="let element"> {{element.warrantyTill | date}} </td>
+  </ng-container>
+
+  <!-- Customer Column -->
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef> Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+  </ng-container>
+
+  <!-- Customer Column -->
+  <ng-container matColumnDef="location">
+    <th mat-header-cell *matHeaderCellDef> Location </th>
+    <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+  </ng-container>
+
+  <!-- View Column -->
+  <ng-container matColumnDef="action1">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button color="primary" (click)="ViewRecord(element.id)">View</button> 
+    </td>
+  </ng-container>
+
   <!-- Delete Column -->
-  <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef> Action </th>
+  <ng-container matColumnDef="action2">
+      <th mat-header-cell *matHeaderCellDef> </th>
       <td mat-cell *matCellDef="let element">
         <button mat-button color="warn" (click)="deleteRecord(element.id)">Delete</button> 
       </td>
