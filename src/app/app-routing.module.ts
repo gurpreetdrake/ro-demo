@@ -5,6 +5,7 @@ import { WarrantyreportComponent } from '../warrantyreport/warrantyreport.compon
 import { AddWarrantyComponent } from '../add-warranty/add-warranty.component';
 import { VideosComponent } from '../videos/videos.component';
 import { ImagesComponent } from '../images/images.component';
+import { WarrantyDetailComponent } from './warranty-detail/warranty-detail.component';
 
 
 const routes: Routes = [{path:'home', component: HomeComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [{path:'home', component: HomeComponent},
                         {path:'add-warranty', component: AddWarrantyComponent},
                         {path:'videos', component: VideosComponent},
                         {path:'images', component: ImagesComponent},
+                        {path:'warranty-detail', component: WarrantyDetailComponent},
                         {path:'', redirectTo: '/home', pathMatch:'full'}];
 
 @NgModule({
