@@ -8,7 +8,7 @@ import { MatTableModule } from '@angular/material/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ApiServiceService } from './api.service';
+import { ApiServiceService } from './Service/api.service'
 import { WarrantyreportComponent } from './warrantyreport/warrantyreport.component';
 import { HomeComponent } from './home/home.component';
 
