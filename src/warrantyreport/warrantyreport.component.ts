@@ -11,15 +11,26 @@ import { WarrantyreportsModel } from '../Model/warrantyreports';
 
 export class WarrantyreportComponent implements OnInit {
 
-  displayedColumns: string[] = ['serialNo', 'deliveryDate', 'customer'];
+  displayedColumns: string[] = ['serialNo', 'deliveryDate', 'customer', 'action'];
   warrantyData: any;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.fetchRecords();
+  }
+
+  fetchRecords(){
     this.apiService.getWarrantyReports().subscribe((res)=>{      
-        console.log("Response:" + res.toString());
-        this.warrantyData = res;
+      console.log("Get Response:" + res.toString());
+      this.warrantyData = res;
+  })
+  }
+
+  deleteRecord(id: number){
+    this.apiService.deleteWarrantyReports(id).subscribe((res)=>{
+      console.log("Delete Response:" + res.toString());
+      this.fetchRecords();
     })
   }
 
