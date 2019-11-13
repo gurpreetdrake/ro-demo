@@ -1,18 +1,18 @@
 <h3>Add Warranty</h3>
 <div class="example-container">
         <mat-form-field>
-          <input matInput placeholder="Serial No.">
+          <input matInput placeholder="Serial No." [(value)]="newRecord.serialNo">
         </mat-form-field>
       
         <mat-form-field>
-          <input matInput type="date" value="{{date}}" placeholder="Delivery Date">
+          <input matInput type="date" placeholder="Delivery Date" [(value)]="newRecord.deliveryDate">
         </mat-form-field>
         
         <mat-form-field>
-            <input matInput placeholder="Customer name">
+            <input matInput placeholder="Customer name" [(value)]="newRecord.customer">
         </mat-form-field>
 </div>
 
-<button mat-raised-button color="primary" (clcik)="saveRecord()">Save</button>
+<button mat-raised-button color="primary" (click)="saveRecord()">Save</button>
 
 

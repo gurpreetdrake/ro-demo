@@ -13,7 +13,7 @@ export class ApiService {
   }
   
   public addWarranty(warranty: WarrantyreportsModel){
-    this.httpClient.post(`${this.apiURL}/warranties`, warranty);
+    return this.httpClient.post(`${this.apiURL}/warranties`, warranty);
   }
 
   public updateWarranty(warranty: WarrantyreportsModel){
