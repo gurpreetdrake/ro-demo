@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../Service/api.service';
-import { WarrantyreportsModel } from '../Model/warrantyreports';
 
 @Component({
   selector: 'warrantyreport',
