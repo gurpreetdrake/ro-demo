@@ -11,7 +11,7 @@ import { WarrantyreportsModel } from '../Model/warrantyreports';
 
 export class WarrantyreportComponent implements OnInit {
 
-  displayedColumns: string[] = ['serialNo', 'deliveryDate', 'customer', 'action'];
+  displayedColumns: string[] = ['serialNo', 'deliveryDate', 'customer', "nsn", 'value', 'warrantyTill', 'partNo','location','designation','type','warrantyPeriod', 'action1', 'action2'];
   warrantyData: any;
 
   constructor(private apiService: ApiService) { }
