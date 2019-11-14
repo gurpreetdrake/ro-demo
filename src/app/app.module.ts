@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
@@ -30,6 +31,8 @@ import { AddWarrantyComponent } from './add-warranty/add-warranty.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
     MatButtonModule,
     MatTableModule,
     MatCardModule,
@@ -37,7 +40,6 @@ import { AddWarrantyComponent } from './add-warranty/add-warranty.component';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    HttpClientModule,
     AppRoutingModule
   ],
   providers: [ApiService],

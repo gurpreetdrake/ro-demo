@@ -15,8 +15,8 @@ export class AddWarrantyComponent implements OnInit {
 
   ngOnInit() {
     this.newRecord = new WarrantyreportsModel;
-    this.newRecord.serialNo = 0;
-    this.newRecord.deliveryDate = Date.now.toString();
+    this.newRecord.serialNo = 1234;
+    this.newRecord.deliveryDate = new Date().toISOString().substring(0, 10);
     this.newRecord.customer = "";
   }
 

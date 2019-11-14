@@ -1,15 +1,15 @@
 <h3>Add Warranty</h3>
 <div class="example-container">
         <mat-form-field>
-          <input matInput placeholder="Serial No." [(value)]="newRecord.serialNo">
+          <input matInput placeholder="Serial No." [(ngModel)]="newRecord.serialNo">
         </mat-form-field>
       
         <mat-form-field>
-          <input matInput type="date" placeholder="Delivery Date" [(value)]="newRecord.deliveryDate">
+          <input matInput type="date" placeholder="Delivery Date" [ngModel]="newRecord.deliveryDate | date:'yyyy-MM-dd'" (ngModelChange)="newRecord.deliveryDate = $event">
         </mat-form-field>
         
         <mat-form-field>
-            <input matInput placeholder="Customer name" [(value)]="newRecord.customer">
+            <input matInput placeholder="Customer name" [(ngModel)]="newRecord.customer">
         </mat-form-field>
 </div>
 
