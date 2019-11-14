@@ -19,7 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApiService } from '../Service/api.service'
 import { WarrantyreportComponent } from '../warrantyreport/warrantyreport.component';
 import { HomeComponent } from '../home/home.component';
-import { AddWarrantyComponent } from './add-warranty/add-warranty.component';
+import { AddWarrantyComponent } from '../add-warranty/add-warranty.component';
+import { VideosComponent } from '../videos/videos.component';
+import { ImagesComponent } from '../images/images.component';
 import { WarrantyDetailComponent } from './warranty-detail/warranty-detail.component';
 
 
@@ -29,6 +31,8 @@ import { WarrantyDetailComponent } from './warranty-detail/warranty-detail.compo
     WarrantyreportComponent,
     HomeComponent,
     AddWarrantyComponent,
+    VideosComponent,
+    ImagesComponent,
     WarrantyDetailComponent
   ],
   imports: [

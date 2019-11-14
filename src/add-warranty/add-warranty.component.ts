@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Location } from '@angular/common';
-import { ApiService } from '../../Service/api.service';
-import { WarrantyreportsModel } from '../../Model/warrantyreports';
+import { ApiService } from '../Service/api.service';
+import { WarrantyreportsModel } from '../Model/warrantyreports';
 
 @Component({
   selector: 'app-add-warranty',
   templateUrl: './add-warranty.component.html',
   styleUrls: ['./add-warranty.component.css']
 })
+
 export class AddWarrantyComponent implements OnInit {
 
   newRecord: WarrantyreportsModel;

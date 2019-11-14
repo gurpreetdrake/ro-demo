@@ -26,7 +26,7 @@ export class WarrantyreportComponent implements OnInit {
       console.log("Get Response:" + res.toString());
       this.loadingData = false;
       this.warrantyData = res;
-  })
+    })
   }
 
   deleteRecord(id: number){
