@@ -77,7 +77,7 @@
   <ng-container matColumnDef="action1">
     <th mat-header-cell *matHeaderCellDef> </th>
     <td mat-cell *matCellDef="let element">
-      <button mat-button color="primary" (click)="ViewRecord(element.id)">View</button> 
+      <button mat-button color="primary" [routerLink]="['/warranty-detail']" [queryParams]="element">View</button> 
     </td>
   </ng-container>
 
@@ -92,3 +92,4 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+ <mat-spinner *ngIf="loadingData" style="left: 45%;"></mat-spinner>

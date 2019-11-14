@@ -11,18 +11,21 @@ import { WarrantyreportsModel } from '../Model/warrantyreports';
 
 export class WarrantyreportComponent implements OnInit {
 
+  loadingData: Boolean = false;
   displayedColumns: string[] = ['serialNo', 'deliveryDate', 'customer', "nsn", 'value', 'warrantyTill', 'partNo','location','designation','type','warrantyPeriod', 'action1', 'action2'];
   warrantyData: any;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.loadingData = true;
     this.fetchRecords();
   }
 
   fetchRecords(){
     this.apiService.getWarrantyReports().subscribe((res)=>{      
       console.log("Get Response:" + res.toString());
+      this.loadingData = false;
       this.warrantyData = res;
   })
   }

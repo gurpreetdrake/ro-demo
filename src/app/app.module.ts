@@ -10,6 +10,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,7 @@ import { ApiService } from '../Service/api.service'
 import { WarrantyreportComponent } from '../warrantyreport/warrantyreport.component';
 import { HomeComponent } from '../home/home.component';
 import { AddWarrantyComponent } from './add-warranty/add-warranty.component';
+import { WarrantyDetailComponent } from './warranty-detail/warranty-detail.component';
 
 
 @NgModule({
@@ -25,7 +28,8 @@ import { AddWarrantyComponent } from './add-warranty/add-warranty.component';
     AppComponent,
     WarrantyreportComponent,
     HomeComponent,
-    AddWarrantyComponent
+    AddWarrantyComponent,
+    WarrantyDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +44,8 @@ import { AddWarrantyComponent } from './add-warranty/add-warranty.component';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatListModule,
+    MatProgressSpinnerModule,
     AppRoutingModule
   ],
   providers: [ApiService],
