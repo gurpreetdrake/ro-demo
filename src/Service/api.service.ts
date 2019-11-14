@@ -33,6 +33,7 @@ export class ApiService {
   }
 
   public getWarrantyReports(){
+    console.log(this.getHttpOptions())
     return this.httpClient.get<WarrantyreportsModel[]>(`${this.apiURL}/warranties`, this.getHttpOptions());
   }
   
