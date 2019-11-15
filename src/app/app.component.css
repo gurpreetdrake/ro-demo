@@ -1,0 +1,47 @@
+.toolbar {
+   height: 60px;
+   display: flex;
+   align-items: center;
+   background-color: #1976d2;
+   color: white;
+   font-weight: 500;
+}
+.span{
+   padding-left: 20px; 
+}
+.card.highlight-card {
+   background-color: #1976d2;
+   color: white;
+   font-weight: 600;
+   border: none;
+   width: auto;
+   min-width: 30%;
+   position: relative;
+}
+a,
+a:visited,
+a:hover {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #125699;
+} 
+
+#main{
+    background-color: rgb(243, 241, 241);
+    height:90%;
+    margin-top: -22px;
+}
+
+mat-nav-list.list-horizontal {
+   padding: 0; display: inline-block;
+   height: auto;
+   width: auto;}
+   .mat-list-item {
+     display: inline-block;
+     height: auto;
+     width: auto;
+   }
+ 
