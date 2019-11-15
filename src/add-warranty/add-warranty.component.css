@@ -3,18 +3,22 @@
   padding-left: 20px; 
   padding-right: 20px;
 }
-mat-divider{
-  margin-bottom: 50px;
-}
 .example-container{
   width: 100%;
   margin-top: 40px;
 }
-mat-form-field{
-margin: 15px;
+mat-form-field{  
+  margin-right: 30px;
+  width: 40%;;
 }
 h4{
   color: rgb(84, 82, 82);
 }
-  
-  
+
+button{
+  position: absolute;
+  right:20px;
+  bottom :15px;
+  color: #fff;  
+  background-color: #1776D2;
+}
