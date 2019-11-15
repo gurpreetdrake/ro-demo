@@ -1,3 +1,4 @@
-export interface DocumentModel {
-    src: string;
+export class DocumentModel {
+    id: string;
+    source: File;
 }

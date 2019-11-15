@@ -1,3 +1,4 @@
-export interface VideoModel {
-    src: string;
+export class VideoModel {
+    id: string;
+    source: string;
 }

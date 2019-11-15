@@ -11,8 +11,8 @@ import { WarrantyDetailComponent } from './warranty-detail/warranty-detail.compo
 const routes: Routes = [{path:'home', component: HomeComponent},
                         {path:'warrantyreports', component: WarrantyreportComponent},
                         {path:'add-warranty', component: AddWarrantyComponent},
-                        {path:'videos', component: VideosComponent},
-                        {path:'documents', component: DocumentsComponent},
+                        {path:'vids', component: VideosComponent},
+                        {path:'docs', component: DocumentsComponent},
                         {path:'warranty-detail', component: WarrantyDetailComponent},
                         {path:'', redirectTo: '/home', pathMatch:'full'}];
 

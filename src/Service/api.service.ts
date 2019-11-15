@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { WarrantyreportsModel } from '../Model/warrantyreports';
-import {DocumentModel} from '../Model/documentmodel';
+import { DocumentModel } from '../Model/documentmodel';
 import { VideoModel } from '../Model/videomodel';
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class ApiService {
 
   }
 
-  getHttpOptions(){
+  getHttpOptions() {
     let token = localStorage.getItem("id_token");
     return {
       headers: {
@@ -21,58 +21,59 @@ export class ApiService {
     }
   }
 
-  login(email: string, password: string){
-    this.httpClient.post(`${this.apiURL}/auth/local`, 
-    {
-      "identifier": email,
-      "password": password
-    })
-    .subscribe((res)=>{
-      localStorage.setItem("id_token", res['jwt']);
-    });
+  login(email: string, password: string) {
+    this.httpClient.post(`${this.apiURL}/auth/local`,
+      {
+        "identifier": email,
+        "password": password
+      })
+      .subscribe((res) => {
+        localStorage.setItem("id_token", res['jwt']);
+      });
   }
 
-  public getWarrantyReports(){
+  public getWarranty() {
     console.log(this.getHttpOptions())
     return this.httpClient.get<WarrantyreportsModel[]>(`${this.apiURL}/warranties`, this.getHttpOptions());
   }
-  
-  public addWarranty(warranty: WarrantyreportsModel){
+  public addWarranty(warranty: WarrantyreportsModel) {
     return this.httpClient.post(`${this.apiURL}/warranties`, warranty, this.getHttpOptions());
   }
-
-  public updateWarranty(warranty: WarrantyreportsModel){
+  public updateWarranty(warranty: WarrantyreportsModel) {
     return this.httpClient.put(`${this.apiURL}/warranties/${warranty.id}`, warranty, this.getHttpOptions());
   }
-
-  public deleteWarrantyReports(id: number){
+  public deleteWarranty(id: number) {
     return this.httpClient.delete(`${this.apiURL}/warranties/${id}`, this.getHttpOptions());
   }
 
-  public getDocData(){
-    return this.httpClient.get<DocumentModel[]>(`${this.apiURL}/documents`);
+  public getDocument() {
+    return this.httpClient.get<DocumentModel[]>(`${this.apiURL}/documents`, this.getHttpOptions());
   }
-  public addImgData(img: DocumentModel){
-    return this.httpClient.post(`${this.apiURL}/documents`, img);
+  public addDocument(doc: any) {
+    return this.httpClient.post(`${this.apiURL}/documents`, doc, this.getHttpOptions());
   }
-  public deleteDocData(id: number){
-    return this.httpClient.delete(`${this.apiURL}/documents/${id}`);
+  public deleteDocument(id: number) {
+    return this.httpClient.delete(`${this.apiURL}/documents/${id}`, this.getHttpOptions());
   }
 
-  public getVideosData(){
-    return this.httpClient.get<VideoModel[]>(`${this.apiURL}/videos`);
+  public getVideo() {
+    return this.httpClient.get<VideoModel[]>(`${this.apiURL}/videos`, this.getHttpOptions());
   }
-  public addVideosData(vid: VideoModel){
-    return this.httpClient.post(`${this.apiURL}/videos`, vid);
+  public addVideo(vid: VideoModel) {
+    return this.httpClient.post(`${this.apiURL}/videos`, vid, this.getHttpOptions());
   }
-  public deleteVideosData(id: number){
-    return this.httpClient.delete(`${this.apiURL}/videos/${id}`);
+  public deleteVideo(id: number) {
+    return this.httpClient.delete(`${this.apiURL}/videos/${id}`, this.getHttpOptions());
   }
 
   public postFile(fileToUpload: File) {
-    const endpoint = `${this.apiURL}/upload`;
     const formData: FormData = new FormData();
-    formData.append('fileKey', fileToUpload, fileToUpload.name);
-    return this.httpClient.post(endpoint, formData, this.getHttpOptions());
-}
+    formData.append('file', fileToUpload);
+    return this.httpClient.post(`${this.apiURL}/upload`, formData,
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+  }
 }
