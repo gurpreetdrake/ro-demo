@@ -33,7 +33,8 @@ export class AddWarrantyComponent implements OnInit {
   } 
 
   saveRecord(){
-    this.apiService.addWarranty(this.newRecord).subscribe((res)=>{  
+    this.apiService.addWarranty(this.newRecord)
+    .subscribe((res)=>{  
       console.log("Add Response:" + res.toString());
       this.location.back();
   })
