@@ -21,7 +21,7 @@ import { WarrantyreportComponent } from '../warrantyreport/warrantyreport.compon
 import { HomeComponent } from '../home/home.component';
 import { AddWarrantyComponent } from '../add-warranty/add-warranty.component';
 import { VideosComponent } from '../videos/videos.component';
-import { ImagesComponent } from '../images/images.component';
+import { DocumentsComponent } from '../documents/documents.component';
 import { WarrantyDetailComponent } from './warranty-detail/warranty-detail.component';
 
 
@@ -32,7 +32,7 @@ import { WarrantyDetailComponent } from './warranty-detail/warranty-detail.compo
     HomeComponent,
     AddWarrantyComponent,
     VideosComponent,
-    ImagesComponent,
+    DocumentsComponent,
     WarrantyDetailComponent
   ],
   imports: [
