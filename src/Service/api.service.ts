@@ -7,28 +7,28 @@ import { VideoModel } from '../Model/videomodel'
   providedIn: 'root'
 })
 export class ApiService {
-  token = '';
   apiURL: string = 'https://shielded-sands-78532.herokuapp.com'
   constructor(private httpClient: HttpClient) {
 
   }
 
   getHttpOptions(){
+    let token = localStorage.getItem("id_token");
     return {
       headers: {
-        Authorization: `Bearer ${this.token}`
+        Authorization: `Bearer ${token}`
       }
     }
   }
 
-  getToken(idn: string, pwd: string){
+  login(email: string, password: string){
     this.httpClient.post(`${this.apiURL}/auth/local`, 
     {
-      "identifier": idn,
-      "password": pwd
+      "identifier": email,
+      "password": password
     })
     .subscribe((res)=>{
-      this.token = res['jwt'];
+      localStorage.setItem("id_token", res['jwt']);
     });
   }
 
@@ -68,4 +68,11 @@ export class ApiService {
   public deleteVideosData(id: number){
     return this.httpClient.delete(`${this.apiURL}/videos/${id}`);
   }
+
+  public postFile(fileToUpload: File) {
+    const endpoint = `${this.apiURL}/upload`;
+    const formData: FormData = new FormData();
+    formData.append('fileKey', fileToUpload, fileToUpload.name);
+    return this.httpClient.post(endpoint, formData, this.getHttpOptions());
+}
 }

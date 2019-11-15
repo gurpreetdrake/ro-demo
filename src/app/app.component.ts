@@ -12,6 +12,6 @@ export class AppComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(){
-    this.apiService.getToken("demo@mail.com", "abc123");
+    this.apiService.login("demo@mail.com", "abc123");
   }
 }
