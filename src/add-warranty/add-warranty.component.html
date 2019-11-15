@@ -3,7 +3,7 @@
 <h4>Add Warranty</h4>
 <mat-divider></mat-divider>
 <div class="example-container">
-    <mat-grid-list cols="2">
+    <mat-grid-list cols="2" >
         <mat-form-field>
           <input matInput placeholder="Serial No." [(ngModel)]="newRecord.serialNo">
         </mat-form-field>
@@ -50,6 +50,6 @@
     </mat-grid-list>
 </div>
 
-<button mat-raised-button color="primary" (click)="saveRecord()">Save</button>
+<button mat-raised-button (click)="saveRecord()">Save</button>
 </mat-card>
 </div>
