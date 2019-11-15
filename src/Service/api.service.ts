@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { WarrantyreportsModel } from '../Model/warrantyreports'
-import { ImageModel } from '../Model/imagemodel'
-import { VideoModel } from '../Model/videomodel'
+import { WarrantyreportsModel } from '../Model/warrantyreports';
+import {DocumentModel} from '../Model/documentmodel';
+import { VideoModel } from '../Model/videomodel';
 @Injectable({
   providedIn: 'root'
 })
@@ -49,14 +49,14 @@ export class ApiService {
     return this.httpClient.delete(`${this.apiURL}/warranties/${id}`, this.getHttpOptions());
   }
 
-  public getImgData(){
-    return this.httpClient.get<ImageModel[]>(`${this.apiURL}/images`);
+  public getDocData(){
+    return this.httpClient.get<DocumentModel[]>(`${this.apiURL}/documents`);
   }
-  public addImgData(img: ImageModel){
-    return this.httpClient.post(`${this.apiURL}/images`, img);
+  public addImgData(img: DocumentModel){
+    return this.httpClient.post(`${this.apiURL}/documents`, img);
   }
-  public deleteImgData(id: number){
-    return this.httpClient.delete(`${this.apiURL}/images/${id}`);
+  public deleteDocData(id: number){
+    return this.httpClient.delete(`${this.apiURL}/documents/${id}`);
   }
 
   public getVideosData(){
