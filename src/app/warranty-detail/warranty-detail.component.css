@@ -1,0 +1,15 @@
+#main{
+    padding-left: 20px; 
+    padding-right: 20px;
+    margin-top: 20px;
+  }
+  h4{
+      padding-top: 25px;
+  }
+  button{
+      position: absolute;
+      top: 70px;
+      right: 25px;
+      color: #fff;  
+      background-color: #1776D2;
+  }
