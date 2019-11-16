@@ -1,1 +1,10 @@
-<input type="file" id="file" (change)="saveDocument($event.target.files)">
+<div id="content">
+    <input type="file" id="file" (change)="saveDocument($event.target.files)">
+    <h4>Documents</h4>
+    <mat-grid-list cols="1" rowHeight="65px">
+        <mat-card>1</mat-card>
+        <mat-card>2</mat-card>
+        <mat-card>3</mat-card>
+        <mat-card>4</mat-card>
+    </mat-grid-list>
+</div>
