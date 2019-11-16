@@ -68,10 +68,13 @@ export class ApiService {
 
   public postFile(fileToUpload: File) {
     const formData: FormData = new FormData();
-    formData.append('file', fileToUpload);
+    formData.append('file', fileToUpload, fileToUpload.name);
     return this.httpClient.post(`${this.apiURL}/upload`, formData,
       {
         headers: {
+          'Access-Control-Allow-Origin': '*',
+          "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT",
+          'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
           'Content-Type': 'multipart/form-data'
         }
       });
