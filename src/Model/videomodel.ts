@@ -1,4 +1,5 @@
 export class VideoModel {
-    id: string;
+    id: number;
+    name: string
     source: string;
 }

@@ -12,6 +12,10 @@ export class ApiService {
 
   }
 
+  getApiUrl(): string{
+    return this.apiURL;
+  }
+
   getHttpOptions() {
     let token = localStorage.getItem("id_token");
     return {
@@ -66,17 +70,11 @@ export class ApiService {
     return this.httpClient.delete(`${this.apiURL}/videos/${id}`, this.getHttpOptions());
   }
 
-  public postFile(fileToUpload: File) {
-    const formData: FormData = new FormData();
-    formData.append('file', fileToUpload, fileToUpload.name);
-    return this.httpClient.post(`${this.apiURL}/upload`, formData,
-      {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT",
-          'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
-          'Content-Type': 'multipart/form-data'
-        }
-      });
+  public postFile(formData: FormData) {
+    return this.httpClient.post(`${this.apiURL}/upload`, formData, this.getHttpOptions());
+  }
+
+  public deleteFile(id: number) {
+    return this.httpClient.delete(`${this.apiURL}/upload/files/${id}`, this.getHttpOptions());
   }
 }

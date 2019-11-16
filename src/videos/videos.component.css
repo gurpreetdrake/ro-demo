@@ -1,8 +1,43 @@
-#content{
-  padding: 30px; 
-  margin-top: 20px;
-}
+
 
 mat-grid-tile {
     background: black;
+  }
+
+  #content{
+    padding: 30px; 
+    margin-top: 20px;
+  }
+
+  mat-card {
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+
+
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .btn {
+    border: 1px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
   }
