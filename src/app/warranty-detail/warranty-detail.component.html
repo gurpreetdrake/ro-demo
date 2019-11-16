@@ -1,19 +1,46 @@
 <div id="main">
-    <button mat-raised-button (click)="onPrint()">Print</button>
-    <div id="report">
-        <h4>Warranty Report</h4>
-        <mat-list>
-            <mat-list-item> Serial No.  {{item.serialNo}}</mat-list-item>
-            <mat-list-item> Delivery Date: {{item.deliveryDate | date}}</mat-list-item>
-            <mat-list-item> Customer: {{item.customer}}</mat-list-item>
-            <mat-list-item> NSN: {{item.nsn}}</mat-list-item>
-            <mat-list-item> Designation: {{item.designation}}</mat-list-item>
-            <mat-list-item> Part No: {{item.partNo}}</mat-list-item>
-            <mat-list-item> Value: {{item.value}}</mat-list-item>
-            <mat-list-item> Warranty Period: {{item.warrantyPeriod}}</mat-list-item>
-            <mat-list-item> Warranty Till: {{item.warrantyTill | date}}</mat-list-item>
-            <mat-list-item> Type: {{item.type}}</mat-list-item>
-            <mat-list-item> Location: {{item.location}}</mat-list-item>
-        </mat-list>
+    <mat-card>
+    <div id="report" style="padding-top: 20px; max-width: 800px;">
+        <h4 style="text-align: center;">Warranty Report</h4>
+        <div class="row" style="padding-top: 70px;">            
+            <div class="col-3">Delivery Date:</div>
+            <div class="col-9" style="margin-left: -30px;">{{item.deliveryDate | date}}</div>
+        </div>
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-3">Serial No.</div>
+            <div class="col-9" style="margin-left: -30px;">{{item.serialNo}}</div>
+        </div>
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-3">Customer:</div>
+            <div class="col-9" style="margin-left: -30px;">{{item.customer}}</div>
+        </div>
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-3">NSN:</div>
+            <div class="col-3" style="margin-left: -30px;">{{item.nsn}}</div>
+            <div class="col-2">Designation:</div>
+            <div class="col-4">{{item.designation}}</div>
+        </div>
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-3">Part No:</div>
+            <div class="col-3" style="margin-left: -30px;">{{item.partNo}}</div>
+            <div class="col-2">Value:</div>
+            <div class="col-4">{{item.value}}</div>
+        </div>
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-3">Warranty Period:</div>
+            <div class="col-3" style="margin-left: -30px;">{{item.warrantyPeriod}}</div>
+            <div class="col-2">Warranty Till:</div>
+            <div class="col-4">{{item.warrantyTill | date}}</div>
+        </div>
+        <div class="row" style="padding-top: 10px;padding-bottom: 5px;">
+            <div class="col-3" >Type:</div>
+            <div class="col-3" style="margin-left: -30px;">{{item.type}}</div>
+            <div class="col-2">Location:</div>
+            <div class="col-4">{{item.location}}</div>
+        </div>
+    
     </div>
+
+    <button mat-raised-button (click)="onPrint()">Print</button>
+</mat-card>
 </div>
