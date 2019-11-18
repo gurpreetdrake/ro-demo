@@ -1,5 +1,7 @@
+import { ProductModel } from './product-model';
+
 export class  WarrantyreportsModel {
-    id: string;
+    id: number;
     serialNo:number;
     deliveryDate: string;
     customer: string;
@@ -10,5 +12,8 @@ export class  WarrantyreportsModel {
     location: string;
     designation: string;
     type: string;
-    warrantyPeriod: number
+    warrantyPeriod: number;
+
+    productId: number;
+    product: ProductModel[];
 }

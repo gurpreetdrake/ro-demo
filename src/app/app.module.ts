@@ -22,7 +22,9 @@ import { HomeComponent } from '../home/home.component';
 import { AddWarrantyComponent } from '../add-warranty/add-warranty.component';
 import { VideosComponent } from '../videos/videos.component';
 import { DocumentsComponent } from '../documents/documents.component';
-import { WarrantyDetailComponent } from './warranty-detail/warranty-detail.component';
+import { WarrantyDetailComponent } from '../warranty-detail/warranty-detail.component';
+import { ProductlistComponent } from '../productlist/productlist.component';
+import { AddProductComponent } from '../add-product/add-product.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { WarrantyDetailComponent } from './warranty-detail/warranty-detail.compo
     AddWarrantyComponent,
     VideosComponent,
     DocumentsComponent,
-    WarrantyDetailComponent
+    WarrantyDetailComponent,
+    ProductlistComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

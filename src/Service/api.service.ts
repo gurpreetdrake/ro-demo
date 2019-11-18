@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { } from '../productlist/productlist.component'
 import { WarrantyreportsModel } from '../Model/warrantyreports';
 import { DocumentModel } from '../Model/documentmodel';
 import { VideoModel } from '../Model/videomodel';
+import { ProductModel } from 'src/Model/product-model';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +34,26 @@ export class ApiService {
         localStorage.setItem("id_token", res['jwt']);
       });
   }
+// -------------------------------Product---------------------------------------------
+  // public getProductById() {
+  //   console.log(this.getHttpOptions())
+  //   return this.httpClient.get<ProductModel[]>(`${this.apiURL}/products/`, this.getHttpOptions());
+  // }
+  public getProduct() {
+    console.log(this.getHttpOptions())
+    return this.httpClient.get<ProductModel[]>(`${this.apiURL}/products`, this.getHttpOptions());
+  }
+  public addProduct(product: ProductModel) {
+    return this.httpClient.post(`${this.apiURL}/products`, product, this.getHttpOptions());
+  }
+  public updateProduct(product: ProductModel) {
+    return this.httpClient.put(`${this.apiURL}/products/${product.id}`, product, this.getHttpOptions());
+  }
+  public deleteProduct(id: number) {
+    return this.httpClient.delete(`${this.apiURL}/products/${id}`, this.getHttpOptions());
+  }
 
+  // -------------------------------Warranty---------------------------------------------
   public getWarranty() {
     console.log(this.getHttpOptions())
     return this.httpClient.get<WarrantyreportsModel[]>(`${this.apiURL}/warranties`, this.getHttpOptions());
@@ -45,7 +67,7 @@ export class ApiService {
   public deleteWarranty(id: number) {
     return this.httpClient.delete(`${this.apiURL}/warranties/${id}`, this.getHttpOptions());
   }
-
+// -------------------------------Document---------------------------------------------
   public getDocument() {
     return this.httpClient.get<DocumentModel[]>(`${this.apiURL}/documents`, this.getHttpOptions());
   }
@@ -55,7 +77,7 @@ export class ApiService {
   public deleteDocument(id: number) {
     return this.httpClient.delete(`${this.apiURL}/documents/${id}`, this.getHttpOptions());
   }
-
+// -------------------------------Video---------------------------------------------
   public getVideo() {
     return this.httpClient.get<VideoModel[]>(`${this.apiURL}/videos`, this.getHttpOptions());
   }
