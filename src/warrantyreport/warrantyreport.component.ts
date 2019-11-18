@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../Service/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'warrantyreport',
@@ -14,7 +15,8 @@ export class WarrantyreportComponent implements OnInit {
   displayedColumns: string[] = ['serialNo', 'deliveryDate', 'customer', "nsn", 'value', 'warrantyTill', 'partNo','location','designation','type','warrantyPeriod', 'action1', 'action2'];
   warrantyData: any;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService,
+    private router: Router) { }
 
   ngOnInit() {
     this.loadingData = true;

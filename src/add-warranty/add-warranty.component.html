@@ -25,28 +25,13 @@
         </mat-form-field>
 
         <mat-form-field>
-                <input matInput placeholder="Part No." [(ngModel)]="newRecord.partNo">
-        </mat-form-field>
-
-        <!-- <mat-form-field>
-            <input matInput placeholder="Designation" [(ngModel)]="newRecord.designation">
-        </mat-form-field> -->
-        
-         <!-- <mat-form-field>
-            <input matInput placeholder="NSN" [(ngModel)]="newRecord.nsn">
-        </mat-form-field> -->
-        
-        <!-- <mat-form-field>
-            <input matInput placeholder="$ Value" [(ngModel)]="newRecord.value">
-        </mat-form-field> -->
-        
-        <!-- <mat-form-field>
-            <input matInput placeholder="Warranty Period" [(ngModel)]="newRecord.warrantyPeriod">
-        </mat-form-field> -->
-        
-        <!-- <mat-form-field>
-            <input matInput placeholder="Type" [(ngModel)]="newRecord.type">
-        </mat-form-field> -->   
+                    <mat-label>Product</mat-label>
+                    <mat-select matNativeControl required [(ngModel)]="selectedProductIndex">
+                            <mat-option *ngFor="let product of productData; let idx = index" [value]="idx">
+                              {{product.partNo}}
+                            </mat-option>
+                          </mat-select>
+        </mat-form-field> 
     </mat-grid-list>
 </div>
 <button mat-raised-button (click)="saveRecord()">Save</button>
