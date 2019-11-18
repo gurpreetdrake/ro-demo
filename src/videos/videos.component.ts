@@ -34,16 +34,26 @@ export class VideosComponent implements OnInit {
     this.apiService.addVideo(video)
       .subscribe((res => {
         // console.log("Add video resp: ", res);
+        let itemId = res['id'];
         const formData: FormData = new FormData();
         formData.append('files', fileToUpload);
         formData.append('ref', 'videos');
-        formData.append('refId', res['id']);
+        formData.append('refId', itemId);
         formData.append('field', 'source');
         this.apiService.postFile(formData)
-          .subscribe((res) => {
-            // console.log("Post video resp: ", res);
-            this.getVideos();
-          })
+          .subscribe(
+            data => {
+              console.log("Post video resp: ", data);
+              this.getVideos();
+            },
+            error => {
+              console.log("Failed to upload file: ", error);
+              this.apiService.deleteVideo(itemId)
+                .subscribe((res) => {
+                  console.log("Delete item resp: ", res);
+                });
+            }
+          )
       }));
   }
 
@@ -51,21 +61,20 @@ export class VideosComponent implements OnInit {
     this.apiService.deleteVideo(video.id)
       .subscribe((res) => {
         console.log("Delete video resp: ", res);
+        this.getVideos();
         this.apiService.deleteFile(video.source['id'])
           .subscribe((res) => {
             console.log("Delete video file resp: ", res);
           })
-        this.getVideos();
       })
   }
 
   openVideo(filePath: string) {
     let apiUrl = this.apiService.getApiUrl();
-    window.open(`${apiUrl}/${filePath}`, '_blank');
+    window.open(`${apiUrl}${filePath}`, '_blank');
   };
 
   getFileUrl(filePath: string){
-    console.log(`${this.apiService.getApiUrl()}${filePath}`);
     return `${this.apiService.getApiUrl()}${filePath}`;
   }
 

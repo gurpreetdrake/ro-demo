@@ -33,17 +33,27 @@ export class DocumentsComponent implements OnInit {
     doc.name = fileToUpload.name;
     this.apiService.addDocument(doc)
       .subscribe((res => {
-        // console.log("Add document resp: ", res);
+        console.log("Add document resp: ", res);
+        let itemId = res['id'];
         const formData: FormData = new FormData();
         formData.append('files', fileToUpload);
         formData.append('ref', 'documents');
-        formData.append('refId', res['id']);
+        formData.append('refId', itemId);
         formData.append('field', 'source');
         this.apiService.postFile(formData)
-          .subscribe((res) => {
-            // console.log("Post document resp: ", res);
-            this.getDocuments();
-          })
+          .subscribe(
+            data => {
+              console.log("Post document resp: ", data);
+              this.getDocuments();
+            },
+            error => {
+              console.log("Failed to upload file: ", error);
+              this.apiService.deleteDocument(itemId)
+                .subscribe((res) => {
+                  console.log("Delete document resp: ", res);
+                });
+            }
+          )
       }));
   }
 
@@ -51,17 +61,17 @@ export class DocumentsComponent implements OnInit {
     this.apiService.deleteDocument(document.id)
       .subscribe((res) => {
         console.log("Delete document resp: ", res);
+        this.getDocuments();
         this.apiService.deleteFile(document.source['id'])
           .subscribe((res) => {
             console.log("Delete document file resp: ", res);
           })
-        this.getDocuments();
       })
   }
 
   openDocument(filePath: string) {
     let apiUrl = this.apiService.getApiUrl();
-    window.open(`${apiUrl}/${filePath}`, '_blank');
+    window.open(`${apiUrl}${filePath}`, '_blank');
   };
 
 }
