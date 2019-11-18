@@ -10,7 +10,7 @@ import { ProductComponent } from '../product/product.component'
 
 import { AddProductComponent } from '../add-product/add-product.component';
 
-const routes: Routes = [{path:'home', component: HomeComponent},
+const routes: Routes = [{path:'', component: HomeComponent},
                         {path:'warrantyreports', component: WarrantyreportComponent},
                         {path:'add-warranty', component: AddWarrantyComponent},
                         {path:'vids', component: VideosComponent},
@@ -18,7 +18,7 @@ const routes: Routes = [{path:'home', component: HomeComponent},
                         {path:'warranty-detail', component: WarrantyDetailComponent},
                         {path:'products', component: ProductComponent},
                         {path:'add-product', component: AddProductComponent},
-                        {path:'', redirectTo: '/home', pathMatch:'full'}];
+                        {path:'', redirectTo: '', pathMatch:'full'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
