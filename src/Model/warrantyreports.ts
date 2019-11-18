@@ -1,4 +1,4 @@
-import { ProductModel } from './product-model';
+import { ProductModel } from './productmodel';
 
 export class  WarrantyreportsModel {
     id: number;

@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { } from '../productlist/productlist.component'
 import { WarrantyreportsModel } from '../Model/warrantyreports';
 import { DocumentModel } from '../Model/documentmodel';
 import { VideoModel } from '../Model/videomodel';
-import { ProductModel } from 'src/Model/product-model';
+import { ProductModel } from '../Model/productmodel';
 
 @Injectable({
   providedIn: 'root'

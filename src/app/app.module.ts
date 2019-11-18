@@ -25,7 +25,7 @@ import { AddWarrantyComponent } from '../add-warranty/add-warranty.component';
 import { VideosComponent } from '../videos/videos.component';
 import { DocumentsComponent } from '../documents/documents.component';
 import { WarrantyDetailComponent } from '../warranty-detail/warranty-detail.component';
-import { ProductlistComponent } from '../productlist/productlist.component';
+import { ProductComponent } from '../product/product.component';
 import { AddProductComponent } from '../add-product/add-product.component';
 
 
@@ -38,7 +38,7 @@ import { AddProductComponent } from '../add-product/add-product.component';
     VideosComponent,
     DocumentsComponent,
     WarrantyDetailComponent,
-    ProductlistComponent,
+    ProductComponent,
     AddProductComponent
   ],
   imports: [

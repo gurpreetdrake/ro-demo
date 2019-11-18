@@ -6,7 +6,7 @@ import { AddWarrantyComponent } from '../add-warranty/add-warranty.component';
 import { VideosComponent } from '../videos/videos.component';
 import { DocumentsComponent } from '../documents/documents.component';
 import { WarrantyDetailComponent } from '../warranty-detail/warranty-detail.component';
-import { ProductlistComponent } from '../productlist/productlist.component'
+import { ProductComponent } from '../product/product.component'
 
 import { AddProductComponent } from '../add-product/add-product.component';
 
@@ -16,7 +16,7 @@ const routes: Routes = [{path:'home', component: HomeComponent},
                         {path:'vids', component: VideosComponent},
                         {path:'docs', component: DocumentsComponent},
                         {path:'warranty-detail', component: WarrantyDetailComponent},
-                        {path:'products', component: ProductlistComponent},
+                        {path:'products', component: ProductComponent},
                         {path:'add-product', component: AddProductComponent},
                         {path:'', redirectTo: '/home', pathMatch:'full'}];
 
