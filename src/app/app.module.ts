@@ -12,6 +12,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -54,6 +56,8 @@ import { AddProductComponent } from '../add-product/add-product.component';
     MatSelectModule,
     MatListModule,
     MatProgressSpinnerModule,
+    MatIconModule,
+    MatDividerModule,
     AppRoutingModule
   ],
   providers: [ApiService],

@@ -1,4 +1,5 @@
 export class DocumentModel {
-    id: string;
+    id: number;
+    name: string
     source: File;
 }

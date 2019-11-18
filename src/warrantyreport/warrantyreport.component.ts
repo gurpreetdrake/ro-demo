@@ -22,7 +22,8 @@ export class WarrantyreportComponent implements OnInit {
   }
 
   fetchRecords(){
-    this.apiService.getWarranty().subscribe((res)=>{      
+    this.apiService.getWarranty()
+    .subscribe((res)=>{      
       console.log("Get Response:" + res.toString());
       this.loadingData = false;
       this.warrantyData = res;
@@ -30,7 +31,8 @@ export class WarrantyreportComponent implements OnInit {
   }
 
   deleteRecord(id: number){
-    this.apiService.deleteWarranty(id).subscribe((res)=>{
+    this.apiService.deleteWarranty(id)
+    .subscribe((res)=>{
       console.log("Delete Response:" + res.toString());
       this.fetchRecords();
     })
