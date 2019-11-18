@@ -3,11 +3,7 @@
     <h4>Add Product</h4>
     <mat-divider></mat-divider>
     <div class="example-container">
-        <mat-grid-list cols="2" >
-            <mat-form-field>
-              <input matInput placeholder="Serial No." [(ngModel)]="newRecord.serialNo">
-            </mat-form-field>
-          
+        <mat-grid-list cols="2" >          
             <mat-form-field>
                     <input matInput placeholder="Part No." [(ngModel)]="newRecord.partNo">
             </mat-form-field>
@@ -24,14 +20,6 @@
                 <input matInput placeholder="$ Value" [(ngModel)]="newRecord.value">
             </mat-form-field>
             
-            <mat-form-field>
-                    <input matInput type="date" placeholder="Delivery Date" [ngModel]="newRecord.deliveryDate | date:'yyyy-MM-dd'" (ngModelChange)="newRecord.deliveryDate = $event">
-            </mat-form-field>
-            
-            <mat-form-field>
-                    <input matInput placeholder="Customer" [(ngModel)]="newRecord.customer">
-            </mat-form-field>
-
             <mat-form-field>
                 <input matInput placeholder="Warranty Period" [(ngModel)]="newRecord.warrantyPeriod">
             </mat-form-field>

@@ -39,11 +39,7 @@ export class ApiService {
       });
   }
 // -------------------------------Product---------------------------------------------
-  // public getProductById() {
-  //   console.log(this.getHttpOptions())
-  //   return this.httpClient.get<ProductModel[]>(`${this.apiURL}/products/`, this.getHttpOptions());
-  // }
-  public getProduct() {
+    public getProduct() {
     console.log(this.getHttpOptions())
     return this.httpClient.get<ProductModel[]>(`${this.apiURL}/products`, this.getHttpOptions());
   }

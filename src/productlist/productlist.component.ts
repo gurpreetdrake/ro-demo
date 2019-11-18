@@ -8,7 +8,7 @@ import { ApiService } from '../Service/api.service';
 })
 export class ProductlistComponent implements OnInit {
   loadingData: Boolean = false;
-  displayedColumns: string[] = ['serialNo', 'partNo','designation','nsn', 'value', 'deliveryDate', 'customer', 'warrantyPeriod', 'type', 'action1', 'action2'];
+  displayedColumns: string[] = ['partNo','designation','nsn', 'value', 'warrantyPeriod', 'type', 'action1'];
   productData: any;
 
   constructor(private apiService: ApiService) { }

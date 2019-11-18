@@ -6,12 +6,7 @@
       
          <!--- Note that these columns can be defined in any order.
                 The actual rendered columns are set as a property on the row definition" -->
-      
-          <ng-container matColumnDef="serialNo">
-           <th mat-header-cell *matHeaderCellDef> Serial No. </th>
-            <td mat-cell *matCellDef="let element"> {{element.serialNo}} </td>
-          </ng-container>
-      
+            
           <ng-container matColumnDef="partNumber">
            <th mat-header-cell *matHeaderCellDef> Part No. </th>
             <td mat-cell *matCellDef="let element"> {{element.partNumber}} </td>
@@ -31,17 +26,7 @@
             <th mat-header-cell *matHeaderCellDef> $Value </th>
             <td mat-cell *matCellDef="let element"> {{element.value}} </td>
           </ng-container>
-      
-         <ng-container matColumnDef="deliveryDate">
-           <th mat-header-cell *matHeaderCellDef> deliveryDate </th>
-            <td mat-cell *matCellDef="let element"> {{element.deliveryDate | date}} </td>
-          </ng-container>
-      
-          <ng-container matColumnDef="customer">
-            <th mat-header-cell *matHeaderCellDef> customer </th>
-             <td mat-cell *matCellDef="let element"> {{element.customer}} </td>
-          </ng-container>
-      
+           
           <ng-container matColumnDef="warrantyPeriod">
             <th mat-header-cell *matHeaderCellDef> warrantyPeriod </th>
             <td mat-cell *matCellDef="let element"> {{element.warrantyPeriod}} </td>
@@ -57,13 +42,6 @@
          </ng-container>
       
          <ng-container matColumnDef="action1">
-           <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let element" style="text-align: center;">
-              <button mat-button color="primary" [routerLink]="['/warranty-detail']" [queryParams]="element">View</button> 
-            </td>
-         </ng-container>
-      
-          <ng-container matColumnDef="action2">
              <th mat-header-cell *matHeaderCellDef></th>
              <td mat-cell *matCellDef="let element" style="text-align: center;">
                 <button mat-button color="warn" (click)="deleteRecord(element.id)">Delete</button> 
