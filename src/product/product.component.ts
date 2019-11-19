@@ -8,26 +8,32 @@ import { ApiService } from '../Service/api.service';
 })
 export class ProductComponent implements OnInit {
   loadingData: Boolean = false;
-  displayedColumns: string[] = ['partNo','designation','nsn', 'value', 'warrantyPeriod', 'type', 'action1'];
-  productData: any;
+  displayedColumns: string[] = ['partNo', 'designation', 'nsn', 'value', 'warrantyPeriod', 'type', 'action1'];
+  productData: any = [];
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.loadingData = true;
     this.fetchRecords();
   }
 
-  fetchRecords(){
-    this.apiService.getProduct().subscribe((res)=>{      
-      console.log("Get Response:" + res.toString());
-      this.loadingData = false;
-      this.productData = res;
-    })
+  fetchRecords() {
+    this.loadingData = true;
+    this.apiService.getProduct()
+      .subscribe(
+        (data) => {
+          // console.log("Get Response:" + data.toString());
+          this.loadingData = false;
+          this.productData = data;
+        },
+        (error) => {
+          this.loadingData = false;
+        }
+      )
   }
 
-  deleteRecord(id: number){
-    this.apiService.deleteProduct(id).subscribe((res)=>{
+  deleteRecord(id: number) {
+    this.apiService.deleteProduct(id).subscribe((res) => {
       console.log("Delete Response:" + res.toString());
       this.fetchRecords();
     })

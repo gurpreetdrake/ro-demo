@@ -1,9 +1,10 @@
 <div id="content">
     <div class="upload-btn-wrapper">
         <button id="btn" mat-raised-button>+</button>
-        <input type="file" name="myfile" (change)="saveDocument($event.target.files)"/>
+        <input type="file" name="myfile" (change)="saveDocument($event.target.files)" />
     </div>
     <h4>Documents</h4>
+    <p *ngIf="!documents.length">No item</p>
     <mat-grid-list cols="1" rowHeight="75px">
         <mat-card id="listitem" *ngFor="let document of documents" (click)="openDocument(document.source.url)">
             {{document.name}}
@@ -13,4 +14,5 @@
             </button>
         </mat-card>
     </mat-grid-list>
+    <mat-spinner *ngIf="loadingData" style="left: 45%;"></mat-spinner>
 </div>

@@ -1,11 +1,8 @@
 <div id="content">
-  <h4>Warranty</h4>
   <button id="btn" mat-raised-button  routerLink="/add-warranty">+</button>
-
+  <h4>Warranty</h4>
+  <p *ngIf="!warrantyData.length">No item</p>
   <table mat-table [dataSource]="warrantyData" *ngIf="!loadingData" class="mat-elevation-z8" style="width: 100%;">
-
-   <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
 
     <ng-container matColumnDef="serialNo">
      <th mat-header-cell *matHeaderCellDef> Serial No. </th>

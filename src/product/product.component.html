@@ -1,47 +1,48 @@
 <div id="content">
-        <h4>Products</h4>
-        <button id="btn" mat-raised-button  routerLink="/add-product">+</button>
-      
-        <table mat-table [dataSource]="productData" *ngIf="!loadingData" class="mat-elevation-z8" style="width: 100%;">
-            
-          <ng-container matColumnDef="partNo">
-           <th mat-header-cell *matHeaderCellDef> Part No. </th>
-            <td mat-cell *matCellDef="let element"> {{element.partNo}} </td>
-           </ng-container>
-      
-         <ng-container matColumnDef="designation">
-           <th mat-header-cell *matHeaderCellDef> Designation </th>
-           <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
-         </ng-container>
-      
-         <ng-container matColumnDef="nsn">
-           <th mat-header-cell *matHeaderCellDef> NSN </th>
-           <td mat-cell *matCellDef="let element"> {{element.nsn}}</td>
-         </ng-container>
-      
-          <ng-container matColumnDef="value">
-            <th mat-header-cell *matHeaderCellDef> $Value </th>
-            <td mat-cell *matCellDef="let element"> {{element.value}} </td>
-          </ng-container>
-      
-         <ng-container matColumnDef="type">
-            <th mat-header-cell *matHeaderCellDef> Type </th>
-            <td mat-cell *matCellDef="let element"> {{element.type}} </td>
-           </ng-container>
-         <ng-container matColumnDef="warrantyPeriod">
-            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Warranty<br>Period </th>
-            <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.warrantyPeriod}} </td>
-         </ng-container>
-      
-         <ng-container matColumnDef="action1">
-             <th mat-header-cell *matHeaderCellDef></th>
-             <td mat-cell *matCellDef="let element" style="text-align: center;">
-                <button mat-icon-button color="warn" (click)="deleteRecord(element.id)"><mat-icon>delete</mat-icon></button> 
-             </td>
-          </ng-container>
-      
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-       <mat-spinner *ngIf="loadingData" style="left: 45%;"></mat-spinner>
-      
+  <button id="btn" mat-raised-button routerLink="/add-product">+</button>
+  <h4>Products</h4>
+  <p *ngIf="!productData.length">No item</p>
+  <table mat-table [dataSource]="productData" *ngIf="!loadingData" class="mat-elevation-z8" style="width: 100%;">
+
+    <ng-container matColumnDef="partNo">
+      <th mat-header-cell *matHeaderCellDef> Part No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.partNo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="designation">
+      <th mat-header-cell *matHeaderCellDef> Designation </th>
+      <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nsn">
+      <th mat-header-cell *matHeaderCellDef> NSN </th>
+      <td mat-cell *matCellDef="let element"> {{element.nsn}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="value">
+      <th mat-header-cell *matHeaderCellDef> $Value </th>
+      <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+    </ng-container>
+    <ng-container matColumnDef="warrantyPeriod">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Warranty<br>Period </th>
+      <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.warrantyPeriod}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action1">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element" style="text-align: center;">
+        <button mat-icon-button color="warn" (click)="deleteRecord(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-spinner *ngIf="loadingData" style="left: 45%;"></mat-spinner>

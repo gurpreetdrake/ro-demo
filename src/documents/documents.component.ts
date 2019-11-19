@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./documents.component.css']
 })
 export class DocumentsComponent implements OnInit {
-
-  documents: any;
+  loadingData: Boolean = false;
+  documents: any = [];
 
   constructor(private apiService: ApiService,
     private router: Router) { }
@@ -20,11 +20,18 @@ export class DocumentsComponent implements OnInit {
   }
 
   getDocuments() {
+    this.loadingData = true;
     this.apiService.getDocument()
-      .subscribe((res) => {
-        // console.log("Get documents:" + JSON.stringify(res));
-        this.documents = res;
-      })
+      .subscribe(
+        (res) => {
+          // console.log("Get documents:" + JSON.stringify(res));
+          this.loadingData = false;
+          this.documents = res;
+        },
+        (error) => {
+          this.loadingData = false;
+        }
+      )
   }
 
   saveDocument(files: FileList) {

@@ -9,7 +9,7 @@ import { ProductModel } from '../Model/productmodel';
   providedIn: 'root'
 })
 export class ApiService {
-  apiURL: string = 'https://shielded-sands-78532.herokuapp.com'
+  apiURL: string = 'https://rostrapi.herokuapp.com'
   constructor(private httpClient: HttpClient) {
 
   }

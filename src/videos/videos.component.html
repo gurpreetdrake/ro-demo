@@ -4,6 +4,7 @@
     <input type="file" name="myfile" accept="video/mp4,video/x-m4v,video/*" (change)="saveVideo($event.target.files)" />
   </div>
   <h4>Videos</h4>
+  <p *ngIf="!videos.length">No item</p>
   <mat-grid-list cols="4" rowHeight="5:3" gutterSize="10px">
     <mat-grid-tile *ngFor="let video of videos" (click)="openVideo(video.source.url)">
       <video width='100%' height='100%' style="object-fit: fill;">
@@ -16,4 +17,5 @@
       </button>
     </mat-grid-tile>
   </mat-grid-list>
+  <mat-spinner *ngIf="loadingData" style="left: 45%;"></mat-spinner>
 </div>

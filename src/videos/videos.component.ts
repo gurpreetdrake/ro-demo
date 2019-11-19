@@ -9,8 +9,8 @@ import { VideoModel } from 'src/Model/videomodel';
   styleUrls: ['./videos.component.css']
 })
 export class VideosComponent implements OnInit {
-
-  videos: any;
+  loadingData: Boolean = false;
+  videos: any = [];
 
   constructor(private apiService: ApiService,
     private router: Router) { }
@@ -20,11 +20,18 @@ export class VideosComponent implements OnInit {
   }
 
   getVideos() {
+    this.loadingData = true;
     this.apiService.getVideo()
-      .subscribe((res) => {
-        // console.log("Get video:" + JSON.stringify(res));
-        this.videos = res;
-      })
+      .subscribe(
+        (data) => {
+        // console.log("Get video:" + JSON.stringify(data));
+        this.loadingData = false;
+        this.videos = data;
+      },
+      (error)=>{
+        this.loadingData = false;
+      }
+      )
   }
 
   saveVideo(files: FileList) {
