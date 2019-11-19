@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../Service/api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +6,10 @@ import { ApiService } from '../Service/api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'ROdemo';
+  title = 'RO Demo';
 
-  constructor(private apiService: ApiService) { }
+  constructor() { }
 
   ngOnInit(){
-    this.apiService.login("demo@mail.com", "abc123");
   }
 }

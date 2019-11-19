@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { WarrantyreportsModel } from '../Model/warrantyreports';
 import { DocumentModel } from '../Model/documentmodel';
 import { VideoModel } from '../Model/videomodel';
@@ -10,11 +11,15 @@ import { ProductModel } from '../Model/productmodel';
 })
 export class ApiService {
   apiURL: string = 'https://rostrapi.herokuapp.com'
-  constructor(private httpClient: HttpClient) {
-
+  constructor(private httpClient: HttpClient,
+    private router: Router) {
+    let token = localStorage.getItem("id_token");
+    if (token == null) {
+      this.login("demo@mail.com", "abc123");
+    }
   }
 
-  getApiUrl(): string{
+  getApiUrl(): string {
     return this.apiURL;
   }
 
@@ -35,11 +40,11 @@ export class ApiService {
       })
       .subscribe((res) => {
         localStorage.setItem("id_token", res['jwt']);
+        window.location.reload();
       });
   }
-// -------------------------------Product---------------------------------------------
-    public getProduct() {
-    console.log(this.getHttpOptions())
+  // -------------------------------Product---------------------------------------------
+  public getProduct() {
     return this.httpClient.get<ProductModel[]>(`${this.apiURL}/products`, this.getHttpOptions());
   }
   public addProduct(product: ProductModel) {
@@ -53,11 +58,10 @@ export class ApiService {
   }
 
   // -------------------------------Warranty---------------------------------------------
-  public getWarrantyById(id:any){
+  public getWarrantyById(id: any) {
     return this.httpClient.get<WarrantyreportsModel[]>(`${this.apiURL}/warranties/${id}`, this.getHttpOptions());
   }
   public getWarranty() {
-    console.log(this.getHttpOptions())
     return this.httpClient.get<WarrantyreportsModel[]>(`${this.apiURL}/warranties`, this.getHttpOptions());
   }
   public addWarranty(warranty: WarrantyreportsModel) {
@@ -69,7 +73,7 @@ export class ApiService {
   public deleteWarranty(id: number) {
     return this.httpClient.delete(`${this.apiURL}/warranties/${id}`, this.getHttpOptions());
   }
-// -------------------------------Document---------------------------------------------
+  // -------------------------------Document---------------------------------------------
   public getDocument() {
     return this.httpClient.get<DocumentModel[]>(`${this.apiURL}/documents`, this.getHttpOptions());
   }
@@ -79,7 +83,7 @@ export class ApiService {
   public deleteDocument(id: number) {
     return this.httpClient.delete(`${this.apiURL}/documents/${id}`, this.getHttpOptions());
   }
-// -------------------------------Video---------------------------------------------
+  // -------------------------------Video---------------------------------------------
   public getVideo() {
     return this.httpClient.get<VideoModel[]>(`${this.apiURL}/videos`, this.getHttpOptions());
   }
