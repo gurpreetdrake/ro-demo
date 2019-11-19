@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from '../home/home.component';
 import { WarrantyreportComponent } from '../warrantyreport/warrantyreport.component';
 import { AddWarrantyComponent } from '../add-warranty/add-warranty.component';
 import { VideosComponent } from '../videos/videos.component';
@@ -10,8 +9,8 @@ import { ProductComponent } from '../product/product.component'
 
 import { AddProductComponent } from '../add-product/add-product.component';
 
-const routes: Routes = [{path:'', component: HomeComponent},
-                        {path:'warrantyreports', component: WarrantyreportComponent},
+const routes: Routes = [{path:'', component: WarrantyreportComponent},
+                        {path:'warranty', component: WarrantyreportComponent},
                         {path:'add-warranty', component: AddWarrantyComponent},
                         {path:'vids', component: VideosComponent},
                         {path:'docs', component: DocumentsComponent},

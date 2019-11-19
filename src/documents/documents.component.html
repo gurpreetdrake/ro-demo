@@ -1,14 +1,13 @@
 <div id="content">
     <div class="upload-btn-wrapper">
-        <button class="btn">Add Document</button>
+        <button id="btn" mat-raised-button>+</button>
         <input type="file" name="myfile" (change)="saveDocument($event.target.files)"/>
     </div>
-    <mat-divider style="margin-top: 20px;"></mat-divider>
     <h4>Documents</h4>
     <mat-grid-list cols="1" rowHeight="75px">
         <mat-card id="listitem" *ngFor="let document of documents" (click)="openDocument(document.source.url)">
             {{document.name}}
-            <button mat-icon-button (click)="deleteDocument(document); $event.stopPropagation()"
+            <button mat-icon-button color="warn" (click)="deleteDocument(document); $event.stopPropagation()"
                 style='position:absolute; right:0px; top: 0px; margin-right: 20px; margin-top: 5px;'>
                 <mat-icon>delete</mat-icon>
             </button>
