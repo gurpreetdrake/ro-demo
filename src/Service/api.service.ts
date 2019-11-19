@@ -53,6 +53,9 @@ export class ApiService {
   }
 
   // -------------------------------Warranty---------------------------------------------
+  public getWarrantyById(id:any){
+    return this.httpClient.get<WarrantyreportsModel[]>(`${this.apiURL}/warranties/${id}`, this.getHttpOptions());
+  }
   public getWarranty() {
     console.log(this.getHttpOptions())
     return this.httpClient.get<WarrantyreportsModel[]>(`${this.apiURL}/warranties`, this.getHttpOptions());

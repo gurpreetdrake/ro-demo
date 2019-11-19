@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { WarrantyreportComponent } from 'src/warrantyreport/warrantyreport.component';
+
+import { ApiService } from '../Service/api.service';
 
 @Component({
   selector: 'app-warranty-detail',
@@ -10,14 +11,21 @@ import { WarrantyreportComponent } from 'src/warrantyreport/warrantyreport.compo
 export class WarrantyDetailComponent implements OnInit {
 
   item: any;
-
-  constructor(private route: ActivatedRoute) { }
+  it: any;
+  constructor(private apiService: ApiService, 
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.queryParams
-      .subscribe(params => {
-        this.item = params;
+      .subscribe(param => {
+       this.fetchData(param['id'])
       });
+  }
+  fetchData(id:string){
+    this.apiService.getWarrantyById(id)
+    .subscribe((res)=>{      
+      this.item = res;
+    })
   }
   onPrint() {
     const printContent = document.getElementById("report");
