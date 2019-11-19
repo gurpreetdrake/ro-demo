@@ -1,8 +1,27 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <span class="span" routerLink ="/home">STRAPI's WORKING</span>
-  <button mat-raised-button style='margin-right: 20px; position:absolute; right:0px'><a href="/admin" target="blank">Admin</a></button>
-</div>
+<mat-toolbar color="primary" role="banner">
+    <button mat-icon-button>
+        <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+    </button>
+    <span class="span" routerLink="/">RO Demo</span>
+    <a mat-raised-button href="/admin" target="blank">Admin</a>
+</mat-toolbar>
 <div id="main">
-<router-outlet></router-outlet>
+    <mat-drawer-container class="example-container">
+        <mat-drawer #drawer mode="side" opened>
+            <mat-nav-list>
+                <a mat-list-item [routerLink]="'/warranty'">Warranty</a>
+                <mat-divider></mat-divider>
+                <a mat-list-item routerLink="/products">Products</a>
+                <mat-divider></mat-divider>
+                <a mat-list-item routerLink="/docs">Documents</a>
+                <mat-divider></mat-divider>
+                <a mat-list-item routerLink="/vids">Videos</a>
+                <mat-divider></mat-divider>
+            </mat-nav-list>
+        </mat-drawer>
+        <mat-drawer-content>
+            <router-outlet></router-outlet>
+        </mat-drawer-content>
+    </mat-drawer-container>
 </div>

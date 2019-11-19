@@ -14,13 +14,14 @@ import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApiService } from '../Service/api.service'
 import { WarrantyreportComponent } from '../warrantyreport/warrantyreport.component';
-import { HomeComponent } from '../home/home.component';
 import { AddWarrantyComponent } from '../add-warranty/add-warranty.component';
 import { VideosComponent } from '../videos/videos.component';
 import { DocumentsComponent } from '../documents/documents.component';
@@ -33,7 +34,6 @@ import { AddProductComponent } from '../add-product/add-product.component';
   declarations: [
     AppComponent,
     WarrantyreportComponent,
-    HomeComponent,
     AddWarrantyComponent,
     VideosComponent,
     DocumentsComponent,
@@ -58,6 +58,8 @@ import { AddProductComponent } from '../add-product/add-product.component';
     MatProgressSpinnerModule,
     MatIconModule,
     MatDividerModule,
+    MatSidenavModule,
+    MatToolbarModule,
     AppRoutingModule
   ],
   providers: [ApiService],
