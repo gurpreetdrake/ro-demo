@@ -36,6 +36,15 @@
     <ng-container matColumnDef="action1">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element" style="text-align: center;">
+        <button mat-icon-button [routerLink]="['/edit-product']" [queryParams]="{id: element.id}" [skipLocationChange]= true>
+          <mat-icon  id="icon">edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action2">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element" style="text-align: center;">
         <button mat-icon-button color="warn" (click)="deleteRecord(element.id)">
           <mat-icon>delete</mat-icon>
         </button>

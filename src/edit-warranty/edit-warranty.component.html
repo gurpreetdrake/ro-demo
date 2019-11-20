@@ -1,0 +1,39 @@
+<div class="main">
+    <mat-card>
+<h4>Edit Warranty</h4>
+<mat-divider></mat-divider>
+<div class="example-container">
+    <mat-grid-list cols="2" >
+        <mat-form-field>
+          <input matInput placeholder="Serial No." [(ngModel)]="item.serialNo">
+        </mat-form-field>
+      
+        <mat-form-field>
+          <input matInput type="date" placeholder="Delivery Date" [ngModel]="item.deliveryDate | date:'yyyy-MM-dd'" (ngModelChange)="editRecord.deliveryDate = $event">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Customer" [(ngModel)]="item.customer">
+        </mat-form-field>        
+             
+        <mat-form-field>
+            <input matInput placeholder="Warranty Till" [ngModel]="item.warrantyTill | date:'yyyy-MM-dd'" (ngModelChange)="editRecord.warrantyTill = $event">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Location" [(ngModel)]="item.location">
+        </mat-form-field>
+
+        <mat-form-field>
+                    <mat-label>Product</mat-label>
+                    <mat-select matNativeControl required [(ngModel)]="selectedProductIndex">
+                            <mat-option *ngFor="let product of productData; let idx = index" [value]="idx">
+                              {{product.partNo}}
+                            </mat-option>
+                          </mat-select>
+        </mat-form-field> 
+    </mat-grid-list>
+</div>
+<button mat-raised-button (click)="updateRecord(item)">Update</button>
+</mat-card>
+</div>

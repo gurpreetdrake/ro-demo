@@ -1,0 +1,35 @@
+<div class="main">
+    <mat-card>
+<h4>Add Product</h4>
+<mat-divider></mat-divider>
+<div class="example-container">
+    <mat-grid-list cols="2" >          
+        <mat-form-field>
+                <input matInput placeholder="Part No." [(ngModel)]="item.partNo">
+        </mat-form-field>
+
+        <mat-form-field>
+                <input matInput placeholder="Designation" [(ngModel)]="item.designation">
+        </mat-form-field>
+
+        <mat-form-field>
+                <input matInput placeholder="NSN" [(ngModel)]="item.nsn">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="$ Value" [(ngModel)]="item.value">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Warranty Period" [(ngModel)]="item.warrantyPeriod">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Type" [(ngModel)]="item.type">
+        </mat-form-field>            
+    </mat-grid-list>
+</div>
+
+<button mat-raised-button (click)="updateRecord(item)">Update</button>
+</mat-card>
+</div>

@@ -44,6 +44,9 @@ export class ApiService {
       });
   }
   // -------------------------------Product---------------------------------------------
+  public getProductById(id: any) {
+    return this.httpClient.get<ProductModel[]>(`${this.apiURL}/products/${id}`, this.getHttpOptions());
+  }
   public getProduct() {
     return this.httpClient.get<ProductModel[]>(`${this.apiURL}/products`, this.getHttpOptions());
   }

@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class WarrantyreportComponent implements OnInit {
 
   loadingData: Boolean = false;
-  displayedColumns: string[] = ['serialNo', 'deliveryDate', 'customer', "nsn", 'value', 'warrantyTill', 'partNo', 'location', 'designation', 'type', 'warrantyPeriod', 'action1', 'action2'];
+  displayedColumns: string[] = ['serialNo', 'deliveryDate', 'customer', "nsn", 'value', 'warrantyTill', 'partNo', 'location', 'designation', 'type', 'warrantyPeriod', 'action1', 'action2','action3'];
   warrantyData: any = [];
 
   constructor(private apiService: ApiService,

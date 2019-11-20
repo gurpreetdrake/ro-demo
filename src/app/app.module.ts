@@ -28,6 +28,8 @@ import { DocumentsComponent } from '../documents/documents.component';
 import { WarrantyDetailComponent } from '../warranty-detail/warranty-detail.component';
 import { ProductComponent } from '../product/product.component';
 import { AddProductComponent } from '../add-product/add-product.component';
+import { EditWarrantyComponent } from '../edit-warranty/edit-warranty.component';
+import { EditProductComponent } from '../edit-product/edit-product.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { AddProductComponent } from '../add-product/add-product.component';
     DocumentsComponent,
     WarrantyDetailComponent,
     ProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    EditWarrantyComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

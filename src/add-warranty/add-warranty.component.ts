@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Location } from '@angular/common';
 import { ApiService } from '../Service/api.service';
 import { WarrantyreportsModel } from '../Model/warrantyreports';
