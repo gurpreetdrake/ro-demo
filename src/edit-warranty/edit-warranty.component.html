@@ -9,7 +9,7 @@
         </mat-form-field>
       
         <mat-form-field>
-          <input matInput type="date" placeholder="Delivery Date" [ngModel]="item.deliveryDate | date:'yyyy-MM-dd'" (ngModelChange)="editRecord.deliveryDate = $event">
+          <input matInput type="date" placeholder="Delivery Date" [ngModel]="item.deliveryDate | date:'yyyy-MM-dd'" (ngModelChange)="item.deliveryDate = $event">
         </mat-form-field>
         
         <mat-form-field>
@@ -17,7 +17,7 @@
         </mat-form-field>        
              
         <mat-form-field>
-            <input matInput placeholder="Warranty Till" [ngModel]="item.warrantyTill | date:'yyyy-MM-dd'" (ngModelChange)="editRecord.warrantyTill = $event">
+            <input matInput placeholder="Warranty Till" [ngModel]="item.warrantyTill | date:'yyyy-MM-dd'" (ngModelChange)="item.warrantyTill = $event">
         </mat-form-field>
 
         <mat-form-field>
