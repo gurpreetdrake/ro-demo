@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
@@ -66,7 +67,7 @@ import { EditProductComponent } from '../edit-product/edit-product.component';
     MatToolbarModule,
     AppRoutingModule
   ],
-  providers: [ApiService],
+  providers: [ApiService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
