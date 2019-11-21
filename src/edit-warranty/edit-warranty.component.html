@@ -3,7 +3,7 @@
 <h4>Edit Warranty</h4>
 <mat-divider></mat-divider>
 <div class="example-container">
-    <mat-grid-list cols="2" >
+    <mat-grid-list cols="2" *ngIf="item">
         <mat-form-field>
           <input matInput placeholder="Serial No." [(ngModel)]="item.serialNo">
         </mat-form-field>
@@ -26,8 +26,8 @@
 
         <mat-form-field>
                     <mat-label>Product</mat-label>
-                    <mat-select matNativeControl required [(ngModel)]="selectedProductIndex">
-                            <mat-option *ngFor="let product of productData; let idx = index" [value]="idx">
+                    <mat-select matNativeControl required [(ngModel)]="selectedProductId">
+                            <mat-option *ngFor="let product of productData" [value]="product.id">
                               {{product.partNo}}
                             </mat-option>
                           </mat-select>

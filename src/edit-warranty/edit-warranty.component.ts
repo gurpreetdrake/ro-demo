@@ -13,7 +13,7 @@ export class EditWarrantyComponent implements OnInit {
 
   item:any;
   productData:any;
-  selectedProductIndex:number=0;
+  selectedProductId: any;
   constructor(private apiService: ApiService, 
               private route: ActivatedRoute,
               private location: Location) { }
@@ -29,6 +29,7 @@ export class EditWarrantyComponent implements OnInit {
     this.apiService.getWarrantyById(id)
     .subscribe((res)=>{      
       this.item = res;
+      this.selectedProductId = this.item.product.id;
     })
     this.apiService.getProduct().subscribe((productResp)=>{     
       this.productData = productResp;
@@ -36,7 +37,7 @@ export class EditWarrantyComponent implements OnInit {
   }
   
   updateRecord(data: WarrantyreportsModel){
-    data.product = this.productData[this.selectedProductIndex];
+    data.product = this.selectedProductId;
     this.apiService.updateWarranty(data)
     .subscribe((res)=>{  
       console.log("Upadte Response:" + res.toString());

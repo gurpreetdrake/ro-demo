@@ -7,5 +7,5 @@ export class  WarrantyreportsModel {
     customer: string;
     warrantyTill: string;
     location: string;
-    product: ProductModel[];
+    product: ProductModel;
 }

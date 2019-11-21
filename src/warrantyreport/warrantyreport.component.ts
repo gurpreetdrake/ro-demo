@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../Service/api.service';
 import { Router } from '@angular/router';
 
+import { WarrantyreportsModel } from '../Model/warrantyreports';
+
 @Component({
   selector: 'warrantyreport',
   templateUrl: './warrantyreport.component.html',
@@ -13,7 +15,7 @@ export class WarrantyreportComponent implements OnInit {
 
   loadingData: Boolean = false;
   displayedColumns: string[] = ['serialNo', 'deliveryDate', 'customer', "nsn", 'value', 'warrantyTill', 'partNo', 'location', 'designation', 'type', 'warrantyPeriod', 'action1', 'action2','action3'];
-  warrantyData: any = [];
+  warrantyData: WarrantyreportsModel[] = [];
 
   constructor(private apiService: ApiService,
     private router: Router) { }

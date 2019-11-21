@@ -21,17 +21,17 @@
 
    <ng-container matColumnDef="nsn">
      <th mat-header-cell *matHeaderCellDef> NSN </th>
-     <td mat-cell *matCellDef="let element">{{element.product.nsn}}</td>
+     <td mat-cell *matCellDef="let element">{{element.product?.nsn}}</td>
    </ng-container>
 
     <ng-container matColumnDef="designation">
       <th mat-header-cell *matHeaderCellDef> Designation </th>
-      <td mat-cell *matCellDef="let element"> {{element.product.designation}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.product?.designation}} </td>
     </ng-container>
 
    <ng-container matColumnDef="partNo">
      <th mat-header-cell *matHeaderCellDef> Part No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.product.partNo}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.product?.partNo}} </td>
     </ng-container>
 
     <ng-container matColumnDef="location">
@@ -41,7 +41,7 @@
 
     <ng-container matColumnDef="value">
       <th mat-header-cell *matHeaderCellDef> Value </th>
-      <td mat-cell *matCellDef="let element"> {{element.product.value}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.product?.value}} </td>
     </ng-container>
 
    <ng-container matColumnDef="warrantyTill">
@@ -51,12 +51,12 @@
 
     <ng-container matColumnDef="type">
       <th mat-header-cell *matHeaderCellDef> Type </th>
-      <td mat-cell *matCellDef="let element"> {{element.product.type}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.product?.type}} </td>
    </ng-container>
    
    <ng-container matColumnDef="warrantyPeriod">
       <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Warranty<br>Period </th>
-      <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.product.warrantyPeriod}} </td>
+      <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.product?.warrantyPeriod}} </td>
    </ng-container>
 
    <ng-container matColumnDef="action1">
